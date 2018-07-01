@@ -1,5 +1,3 @@
-// i've really struggled getting the total price right... I have tried many different ways, this is the last one, alas still not working quite the way I want to...
-
 import { BASE_CHOICE } from '../actions/base'
 import { SAUCE_CHOICE } from '../actions/sauce'
 import { FIRST_TOPPING_CHOICE } from '../actions/toppings'
@@ -18,7 +16,8 @@ const initialPrice = {
 }
 
 const getTotalPrice = (basePrice, saucePrice, firstToppingPrice, secondToppingPrice, thirdToppingPrice) => {
-  const sum = [basePrice, saucePrice, firstToppingPrice, secondToppingPrice, thirdToppingPrice].reduce((a, b) => a + b)
+  const fixedNumbers = [basePrice, saucePrice, firstToppingPrice, secondToppingPrice, thirdToppingPrice].map(price => parseFloat(price))
+  const sum = fixedNumbers.reduce((a, b) => a + b, 0)
   return sum
 }
 

@@ -32,6 +32,7 @@ class SauceComponent extends PureComponent {
     )
   }
 }
+
 const mapStateToProps = function (state) {
   return {
     sauce: state.sauce

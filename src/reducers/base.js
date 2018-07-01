@@ -1,6 +1,13 @@
-export default function (state = [], action) {
+import { BASE_CHOICE } from '../actions/base'
+
+export default function (state = {baseSize: ''}, action) {
   switch (action.type) {
-    default:
-      return state
+  case BASE_CHOICE:
+    return {
+      ...state,
+      baseSize: action.payload.baseSize,
+    }
+  default:
+    return state
   }
 }
